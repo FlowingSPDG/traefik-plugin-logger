@@ -1,22 +1,19 @@
-package pluginlogger_test
+package pluginlogger
 
 import (
 	"context"
 	"net/http"
 	"net/http/httptest"
 	"testing"
-
-	// レポジトリ名にハイフンが付いているため、named importを使用する
-	pluginlogger "github.com/FlowingSPDG/traefik-plugin-logger"
 )
 
 func TestDemo(t *testing.T) {
-	cfg := pluginlogger.CreateConfig()
+	cfg := CreateConfig()
 
 	ctx := context.Background()
 	next := http.HandlerFunc(func(_ http.ResponseWriter, _ *http.Request) {})
 
-	handler, err := pluginlogger.New(ctx, next, cfg, "demo-plugin")
+	handler, err := New(ctx, next, cfg, "demo-plugin")
 	if err != nil {
 		t.Fatal(err)
 	}
