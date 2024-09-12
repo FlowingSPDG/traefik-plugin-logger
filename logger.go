@@ -60,7 +60,7 @@ type Logger struct {
 // New プラグイン本体を作成する関数
 // CreateConfig() と同じく、Yaegiから直接呼び出されるので必須
 // また、関数シグネチャは`New(context.Context, http.Handler, *Config, string) (http.Handler, error)` である必要がある
-func New(ctx context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
+func New(_ context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
 	out := os.Stdout
 	return &Logger{
 		next:   next,

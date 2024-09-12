@@ -14,7 +14,7 @@ func TestDemo(t *testing.T) {
 	cfg := pluginlogger.CreateConfig()
 
 	ctx := context.Background()
-	next := http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {})
+	next := http.HandlerFunc(func(_ http.ResponseWriter, _ *http.Request) {})
 
 	handler, err := pluginlogger.New(ctx, next, cfg, "demo-plugin")
 	if err != nil {
