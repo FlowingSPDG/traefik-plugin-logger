@@ -29,6 +29,7 @@ linters-settings:
 linters:
   enable-all: true
   disable:
+    - godot # 日本語のコメントでもピリオド終わりを強制されるため、今回は除外する
     - sqlclosecheck # not relevant (SQL)
     - rowserrcheck # not relevant (SQL)
     - execinquery # not relevant (SQL)
@@ -58,6 +59,7 @@ issues:
   exclude-rules:
     - path: (.+)_test.go
       linters:
+        - depguard # testパッケージではassertを使用したい場合もあると思うので外す ただし、package名は _test にする必要がある
         - goconst
         - funlen
         - godot
