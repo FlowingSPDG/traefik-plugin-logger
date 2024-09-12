@@ -1,5 +1,5 @@
-// Package plugindemo a demo plugin.
-package plugindemo
+// Package pluginlogger is a demo logger plugin.
+package pluginlogger
 
 import (
 	"bytes"
