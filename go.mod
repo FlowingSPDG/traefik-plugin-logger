@@ -1,3 +1,5 @@
-module github.com/traefik/plugindemo
+module github.com/FlowingSPDG/traefik-plugin-logger
 
-go 1.19
+go 1.23
+
+toolchain go1.23.0
