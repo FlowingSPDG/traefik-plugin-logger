@@ -1,12 +1,11 @@
-displayName: Demo Plugin
+displayName: Request Logger(TEST)
 type: middleware
 iconPath: .assets/icon.png
 
 import: github.com/FlowingSPDG/traefik-plugin-logger
 
-summary: '[Demo] Add Request Header'
+summary: '[TEST] Log request'
 
 testData:
-  Headers:
-    X-Demo: test
-    X-URL: '{{URL}}'
+  Prefix: [TEST LOG]
+  LogLevel: info
